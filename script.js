@@ -5,43 +5,43 @@ document.getElementById("year").textContent=new Date().getFullYear();
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.12});
 document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 // C Programming Training gallery
-const lightbox = document.getElementById("trainingLightbox");
-const lightboxImage = document.querySelector(".lightbox-image");
-const galleryButtons = [...document.querySelectorAll(".gallery-thumb")];
-const openGalleryButton = document.querySelector(".open-gallery");
-const closeButtons = document.querySelectorAll("[data-close-lightbox]");
-const prevButton = document.querySelector(".lightbox-prev");
-const nextButton = document.querySelector(".lightbox-next");
-let galleryIndex = 0;
+const trainingLightbox = document.getElementById("trainingLightbox");
+const trainingImage = document.querySelector(".lightbox-image");
+const trainingThumbs = [...document.querySelectorAll(".gallery-thumb")];
+const trainingOpen = document.querySelector(".open-gallery");
+const trainingClose = document.querySelectorAll("[data-close-lightbox]");
+const trainingPrev = document.querySelector(".lightbox-prev");
+const trainingNext = document.querySelector(".lightbox-next");
+let trainingIndex = 0;
 
 function showTrainingPhoto(index) {
-  if (!galleryButtons.length) return;
-  galleryIndex = (index + galleryButtons.length) % galleryButtons.length;
-  const button = galleryButtons[galleryIndex];
-  lightboxImage.src = button.dataset.full;
-  lightboxImage.alt = button.querySelector("img")?.alt || "C programming training photo";
+  if (!trainingThumbs.length) return;
+  trainingIndex = (index + trainingThumbs.length) % trainingThumbs.length;
+  const button = trainingThumbs[trainingIndex];
+  trainingImage.src = button.dataset.full;
+  trainingImage.alt = button.querySelector("img")?.alt || "C programming training photo";
 }
 function openTrainingGallery(index = 0) {
-  if (!lightbox) return;
+  if (!trainingLightbox) return;
   showTrainingPhoto(index);
-  lightbox.classList.add("open");
-  lightbox.setAttribute("aria-hidden", "false");
+  trainingLightbox.classList.add("open");
+  trainingLightbox.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
 }
 function closeTrainingGallery() {
-  if (!lightbox) return;
-  lightbox.classList.remove("open");
-  lightbox.setAttribute("aria-hidden", "true");
+  if (!trainingLightbox) return;
+  trainingLightbox.classList.remove("open");
+  trainingLightbox.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
 }
-galleryButtons.forEach((button,index) => button.addEventListener("click",()=>openTrainingGallery(index)));
-if (openGalleryButton) openGalleryButton.addEventListener("click",()=>openTrainingGallery(0));
-closeButtons.forEach(button=>button.addEventListener("click",closeTrainingGallery));
-if (prevButton) prevButton.addEventListener("click",()=>showTrainingPhoto(galleryIndex-1));
-if (nextButton) nextButton.addEventListener("click",()=>showTrainingPhoto(galleryIndex+1));
+trainingThumbs.forEach((button,index) => button.addEventListener("click",()=>openTrainingGallery(index)));
+if (trainingOpen) trainingOpen.addEventListener("click",()=>openTrainingGallery(0));
+trainingClose.forEach(button=>button.addEventListener("click",closeTrainingGallery));
+if (trainingPrev) trainingPrev.addEventListener("click",()=>showTrainingPhoto(trainingIndex-1));
+if (trainingNext) trainingNext.addEventListener("click",()=>showTrainingPhoto(trainingIndex+1));
 document.addEventListener("keydown",e=>{
-  if (!lightbox?.classList.contains("open")) return;
+  if (!trainingLightbox?.classList.contains("open")) return;
   if (e.key==="Escape") closeTrainingGallery();
-  if (e.key==="ArrowLeft") showTrainingPhoto(galleryIndex-1);
-  if (e.key==="ArrowRight") showTrainingPhoto(galleryIndex+1);
+  if (e.key==="ArrowLeft") showTrainingPhoto(trainingIndex-1);
+  if (e.key==="ArrowRight") showTrainingPhoto(trainingIndex+1);
 });
