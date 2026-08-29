@@ -20,14 +20,18 @@
 .cv-download-btn {
     display: inline-block;
     padding: 12px 24px;
-    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
     text-decoration: none;
+    border-radius: 8px;
     font-weight: 600;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .cv-download-btn:hover {
-    transform: translateY(-2px);
+    background: #1d4ed8;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
 }
 .photo-label { position:absolute; left:12px; bottom:10px; padding:6px 9px; border-radius:6px; background:rgba(7,17,31,.86); border:1px solid #2b4864; color:#fff; font-size:.62rem; font-weight:800; letter-spacing:1px; }
 .training-highlights { display:grid; grid-template-columns:1fr 1fr; gap:5px 12px; margin:13px 0; color:#b9cadb; font-size:.72rem; }
