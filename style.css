@@ -17,6 +17,18 @@
 .project-url { display:block; margin-top:13px; color:#56c5ff; font-size:.76rem; text-decoration:underline; overflow-wrap:anywhere; }
 .project-note { display:block; margin-top:12px; color:#71869c; font-size:.72rem; }
 .training-cover img { width:100%; height:100%; object-fit:cover; display:block; opacity:.9; }
+.cv-download-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.cv-download-btn:hover {
+    transform: translateY(-2px);
+}
 .photo-label { position:absolute; left:12px; bottom:10px; padding:6px 9px; border-radius:6px; background:rgba(7,17,31,.86); border:1px solid #2b4864; color:#fff; font-size:.62rem; font-weight:800; letter-spacing:1px; }
 .training-highlights { display:grid; grid-template-columns:1fr 1fr; gap:5px 12px; margin:13px 0; color:#b9cadb; font-size:.72rem; }
 .training-gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin:14px 0; }
