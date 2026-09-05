@@ -27,7 +27,56 @@
     font-weight: 600;
     transition: all 0.3s ease;
 }
+/* C Programming Hub Project */
+.project-card .project-tech {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #4db8ff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
 
+.project-card h3 {
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.project-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.project-url {
+  display: inline-block;
+  word-break: break-word;
+}
+
+/* C Programming Hub browser preview */
+.project-card .mock-content small {
+  color: #4db8ff;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.project-card .mock-content strong {
+  display: block;
+  margin: 15px 0;
+  font-size: 1.8rem;
+  line-height: 1.1;
+}
+
+.project-card .mock-content em {
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  font-style: normal;
+}
 .cv-download-btn:hover {
     background: #1d4ed8;
     transform: translateY(-3px);
