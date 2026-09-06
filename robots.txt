@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /assets/
+Disallow: /images/
+
+# Allow access to downloadable CV
+Allow: /assets/Mr.%20Luswa%20CV.pdf
+
+Sitemap: https://luswa-portfolio.vercel.app/sitemap.xml
