@@ -45,3 +45,58 @@ document.addEventListener("keydown",e=>{
   if (e.key==="ArrowLeft") showTrainingPhoto(trainingIndex-1);
   if (e.key==="ArrowRight") showTrainingPhoto(trainingIndex+1);
 });
+
+// Downloadable learning notes and teachers' resources.
+(function renderPortfolioResources() {
+  const resourceData = window.PORTFOLIO_RESOURCES || { notes: [], teachers: [], learningPlans: [] };
+
+  function makeCard(item, category) {
+    const card = document.createElement('article');
+    card.className = 'resource-card reveal';
+
+    const type = document.createElement('span');
+    type.className = 'resource-type';
+    type.textContent = category === 'notes' ? (item.level || 'Learning notes') : (item.type || (category === 'plans' ? 'Learning plan' : 'Teacher resource'));
+
+    const title = document.createElement('h3');
+    title.textContent = item.title;
+
+    const description = document.createElement('p');
+    description.textContent = item.description;
+
+    const level = document.createElement('span');
+    level.className = 'resource-level';
+    level.textContent = category === 'notes' ? 'PDF learning material' : (category === 'plans' ? 'For employers, trainers and educators' : 'For trainers and educators');
+
+    const link = document.createElement('a');
+    link.className = 'resource-download';
+    const target = item.drive && item.drive.trim() ? item.drive.trim() : (item.file || '');
+    if (target) {
+      link.href = target;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.textContent = item.drive ? 'Open Google Drive ↗' : (category === 'plans' ? 'View / Download Plan ↓' : 'Download / View PDF ↓');
+      if (!item.drive && target.toLowerCase().endsWith('.pdf')) link.setAttribute('download', '');
+    } else {
+      link.href = '#';
+      link.classList.add('disabled');
+      link.setAttribute('aria-disabled', 'true');
+      link.textContent = 'Coming soon';
+      link.addEventListener('click', event => event.preventDefault());
+    }
+
+    card.append(type, title, description, level, link);
+    return card;
+  }
+
+  const notesGrid = document.getElementById('notesGrid');
+  const teachersGrid = document.getElementById('teacherResourcesGrid');
+  const learningPlansGrid = document.getElementById('learningPlansGrid');
+  if (notesGrid) resourceData.notes.forEach(item => notesGrid.appendChild(makeCard(item, 'notes')));
+  if (teachersGrid) resourceData.teachers.forEach(item => teachersGrid.appendChild(makeCard(item, 'teachers')));
+  if (learningPlansGrid) resourceData.learningPlans.forEach(item => learningPlansGrid.appendChild(makeCard(item, 'plans')));
+  document.querySelectorAll('.resource-card.reveal').forEach(card => {
+    if (typeof observer !== 'undefined') observer.observe(card);
+    else card.classList.add('visible');
+  });
+})();
