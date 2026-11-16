@@ -14,7 +14,7 @@ window.PORTFOLIO_RESOURCES = {
       description: "Foundational concepts, programming languages, C overview, algorithms, pseudocode and flowcharts.",
       level: "Diploma in ICT",
       file: "resources/notes/topic-01-introduction-to-programming.pdf",
-      drive: ""
+      drive: "https://docs.google.com/document/d/10kSsXg9ZdGNk3dy8eE4rc5WwWAaBzSsA/edit?usp=drivesdk&ouid=101070957240591306787&rtpof=true&sd=true"
     },
     {
       title: "Topic 2: C Programming Environment",
