@@ -14,35 +14,35 @@ window.PORTFOLIO_RESOURCES = {
       description: "Foundational concepts, programming languages, C overview, algorithms, pseudocode and flowcharts.",
       level: "Diploma in ICT",
       file: "resources/notes/topic-01-introduction-to-programming.pdf",
-      drive: "https://docs.google.com/document/d/10kSsXg9ZdGNk3dy8eE4rc5WwWAaBzSsA/edit?usp=drivesdk&ouid=101070957240591306787&rtpof=true&sd=true"
+      drive: "https://drive.google.com/file/d/10zKyhmVMZ2Y1b0SCmHpFXZMHc7kit6sM/view?usp=drivesdk"
     },
     {
       title: "Topic 2: C Programming Environment",
       description: "Compiler setup, development environment and preparing to write and run C programs.",
       level: "Coming soon",
       file: "",
-      drive: ""
+      drive: "https://drive.google.com/file/d/1i4N83EmnHwf1avtUSxFzK5DClBrXtp-j/view?usp=drivesdk"
     },
     {
       title: "Topic 3: Structure of a C Program",
       description: "Program structure, header files, main function, statements and comments.",
       level: "Coming soon",
       file: "",
-      drive: ""
+      drive: "https://drive.google.com/file/d/1PdyIJuWlkojxAxecZD5A5ZVtegSsZ_u-/view?usp=drivesdk"
     },
     {
       title: "Topic 4: Variables and Data Types",
       description: "Identifiers, declarations, constants, data types and type conversion.",
       level: "Coming soon",
       file: "",
-      drive: ""
+      drive: "https://drive.google.com/file/d/1Yc7tX2z7hrUWypQTOHqv4301OXhqsj2B/view?usp=drivesdk"
     },
     {
       title: "Topic 5: Input, Output and Operators",
       description: "Using printf and scanf, format specifiers and common C operators.",
       level: "Coming soon",
       file: "",
-      drive: ""
+      drive: "https://drive.google.com/file/d/1LhQzKny-bBsjA9fscOdT0gn6Sb8YwA7j/view?usp=drivesdk"
     }
   ],
   learningPlans: [
